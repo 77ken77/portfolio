@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Ian G. Sumilang | Computer Engineer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Circuit SVG Background -->
+  <svg class="circuit-bg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <pattern id="circuit-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+        <!-- Horizontal traces -->
+        <line x1="0" y1="50" x2="80" y2="50" stroke="var(--circuit-line)" stroke-width="1" opacity="0.15"/>
+        <line x1="120" y1="50" x2="200" y2="50" stroke="var(--circuit-line)" stroke-width="1" opacity="0.15"/>
+        <line x1="0" y1="150" x2="60" y2="150" stroke="var(--circuit-line)" stroke-width="1" opacity="0.1"/>
+        <line x1="140" y1="150" x2="200" y2="150" stroke="var(--circuit-line)" stroke-width="1" opacity="0.1"/>
+        <!-- Vertical traces -->
+        <line x1="50" y1="0" x2="50" y2="40" stroke="var(--circuit-line)" stroke-width="1" opacity="0.12"/>
+        <line x1="50" y1="60" x2="50" y2="140" stroke="var(--circuit-line)" stroke-width="1" opacity="0.08"/>
+        <line x1="150" y1="60" x2="150" y2="200" stroke="var(--circuit-line)" stroke-width="1" opacity="0.1"/>
+        <!-- Corner traces -->
+        <polyline points="80,50 100,50 100,80" fill="none" stroke="var(--circuit-line)" stroke-width="1" opacity="0.15"/>
+        <polyline points="100,120 100,150 140,150" fill="none" stroke="var(--circuit-line)" stroke-width="1" opacity="0.1"/>
+        <!-- Nodes -->
+        <circle cx="50" cy="50" r="3" fill="var(--circuit-node)" opacity="0.3"/>
+        <circle cx="100" cy="50" r="2" fill="var(--circuit-node)" opacity="0.2"/>
+        <circle cx="100" cy="80" r="2" fill="var(--circuit-node)" opacity="0.2"/>
+        <circle cx="150" cy="150" r="3" fill="var(--circuit-node)" opacity="0.25"/>
+        <circle cx="100" cy="150" r="2" fill="var(--circuit-node)" opacity="0.2"/>
+        <!-- IC pads -->
+        <rect x="46" y="46" width="8" height="8" rx="1" fill="none" stroke="var(--circuit-node)" stroke-width="0.8" opacity="0.2"/>
+        <rect x="146" y="146" width="8" height="8" rx="1" fill="none" stroke="var(--circuit-node)" stroke-width="0.8" opacity="0.15"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+  </svg>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>KIS<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="nav-resume-btn">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, my name is</p>
+      <h1 class="hero-name">Kenneth<br/>Sumilang</h1>
+      <h2 class="hero-tagline">I build hardware/software solutions for the love of the game.</h2>
+      <p class="hero-description">
+        Passionate Computer Engineer Specializing in Data Science.
+        Bridging the gap between hardware and software — from embedded systems to AI-powered web applications.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <!-- Profile image placeholder -->
+          <div class="hero-image-placeholder">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="45" r="22" fill="var(--accent)" opacity="0.3"/>
+              <ellipse cx="60" cy="95" rx="30" ry="20" fill="var(--accent)" opacity="0.3"/>
+            </svg>
+          </div>
+          <!-- Replace above div with: <img src="assets/images/profile.jpg" alt="Kenneth Ian Sumilang" /> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <div class="about-image-wrapper">
+          <div class="about-image-placeholder">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="300" rx="8" fill="var(--card-bg)"/>
+              <circle cx="150" cy="120" r="50" fill="var(--accent)" opacity="0.2"/>
+              <ellipse cx="150" cy="220" rx="70" ry="45" fill="var(--accent)" opacity="0.2"/>
+              <text x="150" y="290" text-anchor="middle" fill="var(--text-muted)" font-size="12">Photo Coming Soon</text>
+            </svg>
+          </div>
+          <!-- Replace above div with: <img src="assets/images/about.jpg" alt="Kenneth working" /> -->
+        </div>
+      </div>
+      <div class="about-text">
+        <p>
+          I am a computer engineering student with a passion for data science and machine learning.
+          I have a background in mathematics, programming, and statistics, and I have honed my skills
+          in various machine learning techniques, such as supervised and unsupervised learning,
+          deep learning, and computer vision.
+        </p>
+        <p>
+          What sets me apart is my versatility — I see myself as an all-arounder. While I specialize
+          in Data Science, I am equally comfortable working on hardware (electronics, embedded systems)
+          as I am building software (web apps, mobile apps). I enjoy connecting both worlds to create
+          complete, end-to-end solutions.
+        </p>
+        <p>
+          I also have a strong interest in Data Engineering and AI Engineering. I am currently pursuing
+          my undergraduate degree in Computer Engineering at the Technological Institute of the Philippines,
+          Quezon City.
+        </p>
+        <p>Here are a few technologies I've been working with recently:</p>
+        <ul class="tech-list">
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Jupyter</li>
+          <li>Numpy</li>
+          <li>Matplotlib</li>
+          <li>Plotly</li>
+          <li>Seaborn</li>
+          <li>scikit-learn</li>
+          <li>Keras</li>
+          <li>TensorFlow</li>
+          <li>OpenCV</li>
+          <li>Flask</li>
+          <li>Streamlit</li>
+          <li>Playwright</li>
+          <li>Google GenAI</li>
+          <li>Git</li>
+          <li>Bash</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience" id="experience">
+    <h2 class="section-title"><span class="section-number">02.</span> Experience</h2>
+    <div class="experience-content">
+      <div class="exp-tabs">
+        <button class="exp-tab active" data-tab="integrity">Integrity Realty PH</button>
+      </div>
+      <div class="exp-panel active" id="integrity">
+        <h3 class="exp-role">I.T. Intern <span class="exp-company">@ Integrity Realty PH</span></h3>
+        <p class="exp-date">Project-Based</p>
+        <p class="exp-summary">Worked as a project-based IT Intern, delivering two full-stack applications that streamlined agent workflows and brought AI capabilities to the company.</p>
+        <ul class="exp-list">
+          <li>
+            Deployed <strong>IntegrityPipelines</strong>: a Data Engineering Web Application designed for agents
+            to run data pipelines for their AI Chatbot Database, as well as upload custom data from
+            other developers.
+          </li>
+          <li>
+            Deployed <strong>IntegrityAI</strong>: an AI Engineering Web Application designed for agents to inquire
+            about pre-selling real estate units. Features include a natural language chatbot for database
+            search and a CMA expert based on BIR Zonal Values, plus a dashboard with data visualizations
+            of the company's database.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <h2 class="section-title"><span class="section-number">03.</span> Projects</h2>
+    <div class="projects-grid">
+
+      <!-- Project: Bioreactor -->
+      <div class="project-card">
+        <div class="project-media">
+          <!-- Drop your video here: assets/videos/bioreactor.mp4 -->
+          <div class="project-gif-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>bioreactor.mp4</span>
+          </div>
+          <video class="project-gif" autoplay muted loop playsinline preload="metadata"
+                 onerror="this.style.display='none'">
+            <source src="assets/videos/bioreactor.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="project-tags">
+              <span>Raspberry Pi</span><span>Embedded Systems</span><span>PCB Design</span>
+              <span>Python</span><span>Linux</span><span>IR Control</span>
+            </div>
+            <span class="project-date">Jan 2025 – Nov 2025</span>
+          </div>
+          <h3 class="project-title">Temporary Immersion Bioreactor Control System</h3>
+          <p class="project-subtitle">Undergraduate Thesis — Hardware Engineering</p>
+          <ul class="project-bullets">
+            <li>Engineered a centralized automated control system utilizing a Raspberry Pi to precisely actuate Solid State Relays (SSRs), high-capacity air pumps, and solenoid valves for timing-based immersion cycles.</li>
+            <li>Designed, etched, and manually soldered custom PCBs for centralized power distribution (5V/GND) and robust I2C sensor integration (SHT SCL/SDA), ensuring reliable hardware connectivity during prototype transport.</li>
+            <li>Reverse-engineered localized air conditioning IR signals using an Arduino receiver and integrated LIRC to automate precise climate regulation via a custom IR transmitter.</li>
+            <li>Developed an integrated touchscreen UI for real-time monitoring of temperature, photoperiod statuses, and mechanical pump actuation schedules.</li>
+            <li>Conducted hardware regression testing and environmental parameter tuning to ensure system stability and fault-tolerant physical safety.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project: IntegrityAI -->
+      <div class="project-card">
+        <div class="project-media">
+          <!-- Drop your video here: assets/videos/integrityai.mp4 -->
+          <div class="project-gif-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>integrityai.mp4</span>
+          </div>
+          <video class="project-gif" autoplay muted loop playsinline preload="metadata"
+                 onerror="this.style.display='none'">
+            <source src="assets/videos/integrityai.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="project-tags">
+              <span>Python</span><span>Streamlit</span><span>Google GenAI</span>
+              <span>PostgreSQL</span><span>SQLite</span><span>n8n</span><span>VPS</span>
+            </div>
+            <span class="project-date">Feb 2026 – Mar 2026</span>
+          </div>
+          <h3 class="project-title">IntegrityAI</h3>
+          <p class="project-subtitle">AI-Powered Real Estate Chatbot & Database System</p>
+          <ul class="project-bullets">
+            <li>Engineered a full-stack AI chatbot integrating web-scraped market data (Lamudi, Rentpad) and developer databases (DMCI, Shang Properties) to automate complex customer inquiries.</li>
+            <li>Designed and maintained automated ETL data pipelines using Python and SQLite, with cronjobs for daily data replenishment and synchronization with a PostgreSQL database.</li>
+            <li>Administered VPS deployment and configured backend routing using n8n to bridge the database with Facebook Messenger and official website webhooks.</li>
+            <li>Developed highly tuned system prompts (AI Engineering) to ensure accurate, context-aware chatbot responses based on specific client constraints.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project: IntegrityPipelines -->
+      <div class="project-card">
+        <div class="project-media">
+          <!-- Drop your video here: assets/videos/integritypipelines.mp4 -->
+          <div class="project-gif-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>integritypipelines.mp4</span>
+          </div>
+          <video class="project-gif" autoplay muted loop playsinline preload="metadata"
+                 onerror="this.style.display='none'">
+            <source src="assets/videos/integritypipelines.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="project-tags">
+              <span>Python</span><span>Streamlit</span><span>Data Engineering</span>
+              <span>PostgreSQL</span><span>PDF Parsing</span><span>VPS</span>
+            </div>
+            <span class="project-date">Feb 2026 – Mar 2026</span>
+          </div>
+          <h3 class="project-title">IntegrityPipelines</h3>
+          <p class="project-subtitle">Full-Stack Data Engineering Web Application</p>
+          <ul class="project-bullets">
+            <li>Built a full-stack web application for uploading developer project PDFs (RLC, Shang Properties) and parsing them into a structured database used by IntegrityAI.</li>
+            <li>Implemented on-demand pipeline execution controls, enabling agents to manually trigger data refresh and synchronization workflows.</li>
+            <li>Provided a database inspection interface for viewing, verifying, and auditing the records powering IntegrityAI, the company's Messenger chatbot, and the official website chatbot.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project: UltraMath -->
+      <div class="project-card">
+        <div class="project-media">
+          <!-- Drop your video here: assets/videos/ultramath.mp4 -->
+          <div class="project-gif-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>ultramath.mp4</span>
+          </div>
+          <video class="project-gif" autoplay muted loop playsinline preload="metadata"
+                 onerror="this.style.display='none'">
+            <source src="assets/videos/ultramath.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <div class="project-tags">
+              <span>Next.js</span><span>Python</span><span>JSON Database</span>
+              <span>VPS</span><span>Web Scraping</span><span>CET Review</span>
+            </div>
+            <span class="project-date">Mar 2026 – Present</span>
+          </div>
+          <h3 class="project-title">UltraMath</h3>
+          <p class="project-subtitle">CET Review Web Application</p>
+          <ul class="project-bullets">
+            <li>Developed a dynamic, full-stack college entrance test (CET) review platform using Next.js and deployed via VPS.</li>
+            <li>Engineered a Python backend that uses randomized variables to generate infinitely unique math problems with dynamic, step-by-step explanations.</li>
+            <li>Constructed a lightweight JSON-based database of scraped and digitized educational content, optimized for rapid querying and low-latency web performance.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section certifications" id="certifications">
+    <h2 class="section-title"><span class="section-number">04.</span> Licenses & Certifications</h2>
+    <div class="certs-grid">
+
+      <!-- Cisco CCNA -->
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4h16v12H4z"/>
+            <path d="M8 20h8M12 16v4"/>
+            <circle cx="8" cy="10" r="1.5"/><circle cx="12" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/>
+          </svg>
+        </div>
+        <div class="cert-info">
+          <h3 class="cert-title">CCNAv7: Enterprise Networking, Security, and Automation</h3>
+          <p class="cert-issuer">Cisco</p>
+          <p class="cert-date">Issued Jul 2025</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4h16v12H4z"/>
+            <path d="M8 20h8M12 16v4"/>
+            <circle cx="8" cy="10" r="1.5"/><circle cx="12" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/>
+          </svg>
+        </div>
+        <div class="cert-info">
+          <h3 class="cert-title">CCNAv7: Switching, Routing, and Wireless Essentials</h3>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-date">Issued Aug 2024</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4h16v12H4z"/>
+            <path d="M8 20h8M12 16v4"/>
+            <circle cx="8" cy="10" r="1.5"/><circle cx="12" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/>
+          </svg>
+        </div>
+        <div class="cert-info">
+          <h3 class="cert-title">CCNAv7: Introduction to Networks</h3>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-date">Issued Aug 2024</p>
+        </div>
+      </div>
+
+      <!-- Placeholder for DataCamp certificates -->
+      <!-- Add more cert-cards here as needed -->
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <h2 class="section-title"><span class="section-number">05.</span> Get In Touch</h2>
+    <div class="contact-content">
+      <p>
+        My inbox is always open. Whether you have a project idea, a question,
+        or just want to say hi — I'll try my best to get back to you!
+      </p>
+      <a href="mailto:ken.sumilang77@gmail.com" class="btn btn-primary btn-lg">Mail Me</a>
+      <div class="contact-socials">
+        <a href="https://github.com/77ken77/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kenneth-ian-sumilang-134b5b2a9/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:ken.sumilang77@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Kenneth Ian G. Sumilang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
