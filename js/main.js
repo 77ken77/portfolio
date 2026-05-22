@@ -138,6 +138,63 @@
 })();
 
 // ============================================
+// SLIDESHOWS: auto-discover numbered images in assets/images/<folder>/
+//   <div class="slideshow" data-slideshow="folder" data-alt="..."></div>
+//   Probes 1.png, 2.png, ... until a 404, then cycles every 4s.
+// ============================================
+(function () {
+  const INTERVAL_MS = 4000;
+  const FADE_MS = 600;
+  const MAX_PROBE = 30;
+
+  async function probeImages(folder) {
+    const found = [];
+    for (let i = 1; i <= MAX_PROBE; i++) {
+      const src = `assets/images/${folder}/${i}.png`;
+      const ok = await new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = src;
+      });
+      if (!ok) break;
+      found.push(src);
+    }
+    return found;
+  }
+
+  async function initSlideshow(el) {
+    const folder = el.dataset.slideshow;
+    const alt = el.dataset.alt || '';
+    if (!folder) return;
+
+    const sources = await probeImages(folder);
+    if (sources.length === 0) return;
+
+    const imgs = sources.map((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt;
+      img.className = 'slideshow-img' + (i === 0 ? ' active' : '');
+      el.appendChild(img);
+      return img;
+    });
+
+    if (imgs.length < 2) return;
+
+    let current = 0;
+    setInterval(() => {
+      const next = (current + 1) % imgs.length;
+      imgs[current].classList.remove('active');
+      imgs[next].classList.add('active');
+      current = next;
+    }, INTERVAL_MS);
+  }
+
+  document.querySelectorAll('.slideshow').forEach(initSlideshow);
+})();
+
+// ============================================
 // TYPING EFFECT for hero tagline (subtle)
 // ============================================
 (function () {
