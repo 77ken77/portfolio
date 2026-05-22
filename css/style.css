@@ -783,6 +783,67 @@ img {
   letter-spacing: 0.04em;
 }
 
+/* Paper variant of project-media (for PDF papers, no video) */
+.project-media-paper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, #0d1a2e 100%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-paper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent);
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.project-media-paper:hover .project-paper-card {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.project-paper-card svg {
+  width: 56px;
+  height: 56px;
+}
+
+.project-paper-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.project-paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-self: flex-start;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.project-paper-link:hover {
+  color: var(--accent-hover);
+  gap: 0.75rem;
+}
+
+.project-paper-link svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* Info area */
 .project-info {
   padding: 1.5rem;
